@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Controle de Gastos | Wesley Garcia</title>
+
+<link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+>
+
+<link rel="stylesheet" href="style.css">
+```
+
+</head>
+
+<body>
+
+```
+<!-- menu do projeto -->
+<nav class="menu">
+
+    <a href="../index.html">
+        PORTFÓLIO
+    </a>
+
+    <a href="#sobre">
+        SOBRE
+    </a>
+
+    <a href="#estrutura">
+        ESTRUTURA
+    </a>
+
+    <a href="#consultas">
+        CONSULTAS
+    </a>
+
+    <a href="#tecnologias">
+        TECNOLOGIAS
+    </a>
+
+</nav>
+
+
+<!-- começo da pagina -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="numero">
+            PROJETO 02
+        </p>
+
+        <h1>
+            Controle de Gastos com
+            <span>PostgreSQL</span>
+        </h1>
+
+        <p class="subtitulo">
+            Banco de dados desenvolvido para armazenar,
+            organizar e consultar gastos de diferentes usuários
+            utilizando PostgreSQL e comandos SQL.
+        </p>
+
+        <div class="botoes">
+
+            <a href="../index.html#projetos" class="botao">
+                ← VOLTAR
+            </a>
+
+            <a href="#estrutura" class="botao destaque">
+                VER PROJETO ↓
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- falando do projeto -->
+<section class="sobre" id="sobre">
+
+    <div class="titulo">
+
+        <p>01</p>
+
+        <h2>
+            Sobre o <span>Projeto</span>
+        </h2>
+
+    </div>
+
+
+    <div class="sobre-grid">
+
+        <div class="texto">
+
+            <p>
+                O projeto foi desenvolvido utilizando PostgreSQL
+                com o objetivo de criar um banco de dados para
+                registrar e organizar gastos.
+            </p>
+
+            <p>
+                Cada gasto pertence a um usuário e possui informações
+                como categoria, item, valor, quantidade, data e
+                forma de pagamento.
+            </p>
+
+            <p>
+                Também foram desenvolvidas consultas SQL para buscar,
+                filtrar, agrupar e calcular informações armazenadas
+                no banco de dados.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info">
+                <span>BANCO</span>
+                <strong>PostgreSQL</strong>
+            </div>
+
+            <div class="info">
+                <span>TIPO</span>
+                <strong>Controle de gastos</strong>
+            </div>
+
+            <div class="info">
+                <span>TABELAS</span>
+                <strong>2 tabelas</strong>
+            </div>
+
+            <div class="info">
+                <span>STATUS</span>
+                <strong>Concluído</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- estrutura das tabela -->
+<section class="estrutura" id="estrutura">
+
+    <div class="titulo">
+
+        <p>02</p>
+
+        <h2>
+            Estrutura do <span>Banco</span>
+        </h2>
+
+    </div>
+
+
+    <div class="tabelas-container">
+
+        <!-- tabela usuario -->
+        <div class="tabela-card">
+
+            <div class="tabela-topo">
+
+                <i class="fas fa-user"></i>
+
+                <h3>usuarios</h3>
+
+            </div>
+
+            <div class="campo">
+                <span>id</span>
+                <strong>PK · SERIAL</strong>
+            </div>
+
+            <div class="campo">
+                <span>nome</span>
+                <strong>VARCHAR(100)</strong>
+            </div>
+
+        </div>
+
+
+        <div class="relacao">
+
+            <span>1</span>
+
+            <div class="linha"></div>
+
+            <i class="fas fa-link"></i>
+
+            <div class="linha"></div>
+
+            <span>N</span>
+
+        </div>
+
+
+        <!-- tabela dos gasto -->
+        <div class="tabela-card">
+
+            <div class="tabela-topo">
+
+                <i class="fas fa-wallet"></i>
+
+                <h3>gastos</h3>
+
+            </div>
+
+            <div class="campo">
+                <span>id</span>
+                <strong>PK · SERIAL</strong>
+            </div>
+
+            <div class="campo">
+                <span>usuario_id</span>
+                <strong>FK · INTEGER</strong>
+            </div>
+
+            <div class="campo">
+                <span>categoria</span>
+                <strong>VARCHAR(100)</strong>
+            </div>
+
+            <div class="campo">
+                <span>item</span>
+                <strong>VARCHAR(100)</strong>
+            </div>
+
+            <div class="campo">
+                <span>valor</span>
+                <strong>DECIMAL(10,2)</strong>
+            </div>
+
+            <div class="campo">
+                <span>quantidade</span>
+                <strong>INTEGER</strong>
+            </div>
+
+            <div class="campo">
+                <span>data</span>
+                <strong>DATE</strong>
+            </div>
+
+            <div class="campo">
+                <span>forma_pagamento</span>
+                <strong>VARCHAR(100)</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- explica a relaçao -->
+    <div class="explicacao-relacao">
+
+        <i class="fas fa-project-diagram"></i>
+
+        <div>
+
+            <h3>Relacionamento</h3>
+
+            <p>
+                A coluna <strong>usuario_id</strong> da tabela
+                <strong>gastos</strong> referencia o
+                <strong>id</strong> da tabela
+                <strong>usuarios</strong>.
+            </p>
+
+            <p>
+                Dessa forma, um usuário pode possuir vários gastos
+                cadastrados no banco.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- consulta que foi feita -->
+<section class="consultas" id="consultas">
+
+    <div class="titulo">
+
+        <p>03</p>
+
+        <h2>
+            Consultas <span>SQL</span>
+        </h2>
+
+    </div>
+
+
+    <div class="consultas-grid">
+
+        <!-- primeira consulta -->
+        <div class="consulta-card">
+
+            <div class="consulta-titulo">
+                <span>01</span>
+                <h3>Visualizar gastos</h3>
+            </div>
+```
+
+<pre><code>SELECT
+    usuarios.nome,
+    gastos.*
+FROM gastos
+JOIN usuarios
+ON gastos.usuario_id = usuarios.id;</code></pre>
+
+```
+        </div>
+
+
+        <!-- segunda consulta -->
+        <div class="consulta-card">
+
+            <div class="consulta-titulo">
+                <span>02</span>
+                <h3>Total de gastos</h3>
+            </div>
+```
+
+<pre><code>SELECT
+    SUM(g.valor) AS total_gasto
+FROM gastos g;</code></pre>
+
+```
+        </div>
+
+
+        <!-- terceira consulta -->
+        <div class="consulta-card">
+
+            <div class="consulta-titulo">
+                <span>03</span>
+                <h3>Gastos por categoria</h3>
+            </div>
+```
+
+<pre><code>SELECT
+    g.categoria,
+    SUM(g.valor) AS total
+FROM gastos g
+GROUP BY g.categoria;</code></pre>
+
+```
+        </div>
+
+
+        <!-- quarta consulta -->
+        <div class="consulta-card">
+
+            <div class="consulta-titulo">
+                <span>04</span>
+                <h3>Gastos por usuário</h3>
+            </div>
+```
+
+<pre><code>SELECT
+    u.nome,
+    SUM(g.valor) AS total_gasto
+FROM gastos g
+JOIN usuarios u
+ON g.usuario_id = u.id
+GROUP BY u.nome;</code></pre>
+
+```
+        </div>
+
+
+        <!-- quinta consulta -->
+        <div class="consulta-card">
+
+            <div class="consulta-titulo">
+                <span>05</span>
+                <h3>Filtro por data</h3>
+            </div>
+```
+
+<pre><code>SELECT
+    u.nome,
+    g.categoria,
+    g.item,
+    g.valor,
+    g.data
+FROM gastos g
+JOIN usuarios u
+ON g.usuario_id = u.id
+WHERE g.data >= '2026-06-12';</code></pre>
+
+```
+        </div>
+
+
+        <!-- sexta consulta -->
+        <div class="consulta-card">
+
+            <div class="consulta-titulo">
+                <span>06</span>
+                <h3>Buscar usuário</h3>
+            </div>
+```
+
+<pre><code>SELECT
+    u.nome,
+    g.item,
+    g.categoria,
+    g.valor
+FROM gastos g
+JOIN usuarios u
+ON g.usuario_id = u.id
+WHERE u.nome = 'Gabriel';</code></pre>
+
+```
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- tecnologia usada -->
+<section class="tecnologias-section" id="tecnologias">
+
+    <div class="titulo">
+
+        <p>04</p>
+
+        <h2>
+            Tecnologias <span>Utilizadas</span>
+        </h2>
+
+    </div>
+
+
+    <div class="tecnologias-container">
+
+        <div class="tecnologia">
+
+            <i class="fas fa-database"></i>
+
+            <h3>PostgreSQL</h3>
+
+            <p>
+                Sistema de gerenciamento utilizado para
+                criar e armazenar os dados do projeto.
+            </p>
+
+        </div>
+
+
+        <div class="tecnologia">
+
+            <i class="fas fa-code"></i>
+
+            <h3>SQL</h3>
+
+            <p>
+                Linguagem utilizada para criação das tabelas,
+                inserção e consulta dos dados.
+            </p>
+
+        </div>
+
+
+        <div class="tecnologia">
+
+            <i class="fas fa-link"></i>
+
+            <h3>Relacionamentos</h3>
+
+            <p>
+                Utilização de chave primária e chave estrangeira
+                para relacionar usuários aos seus gastos.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- logica do banco -->
+<section class="codigo">
+
+    <div class="titulo">
+
+        <p>05</p>
+
+        <h2>
+            Lógica do <span>Banco</span>
+        </h2>
+
+    </div>
+
+
+    <div class="codigo-box">
+```
+
+<pre><code>Cadastrar usuário
+        ↓
+Gerar ID do usuário
+        ↓
+Cadastrar gasto
+        ↓
+Associar usuario_id
+        ↓
+Armazenar informações
+        ↓
+Consultar os dados
+        ↓
+Filtrar e agrupar resultados</code></pre>
+
+```
+    </div>
+
+</section>
+
+
+<!-- final da pagina -->
+<footer>
+
+    <p>
+        Wesley Garcia Macedo
+    </p>
+
+    <a href="../index.html#projetos">
+        ← VOLTAR AOS PROJETOS
+    </a>
+
+</footer>
+```
+
+</body>
+
+</html>

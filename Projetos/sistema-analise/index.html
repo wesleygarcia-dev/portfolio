@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sistema de Análise de Mensagens | Wesley Garcia</title>
+
+    <link rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- MENU -->
+
+    <nav class="menu">
+
+        <a href="../../index.html">
+            PORTFÓLIO
+        </a>
+
+        <a href="#sobre">
+            SOBRE
+        </a>
+
+        <a href="#analisador">
+            TESTAR SISTEMA
+        </a>
+
+        <a href="#tecnologias">
+            TECNOLOGIAS
+        </a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="numero">
+                PROJETO 01
+            </p>
+
+            <h1>
+                Sistema de
+                <span>Análise de Mensagens</span>
+            </h1>
+
+            <p class="subtitulo">
+                Sistema desenvolvido em Java para identificar
+                possíveis mensagens suspeitas através de palavras
+                de risco e um sistema de pontuação.
+            </p>
+
+            <div class="botoes">
+
+                <a href="../../index.html#projetos" class="botao">
+                    ← VOLTAR
+                </a>
+
+                <a href="#analisador" class="botao destaque">
+                    TESTAR SISTEMA ↓
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SOBRE -->
+
+    <section class="sobre" id="sobre">
+
+        <div class="titulo">
+
+            <p>01</p>
+
+            <h2>
+                Sobre o <span>Projeto</span>
+            </h2>
+
+        </div>
+
+
+        <div class="sobre-grid">
+
+            <div class="texto">
+
+                <p>
+                    O Sistema de Análise de Mensagens foi desenvolvido
+                    em Java com o objetivo de identificar possíveis sinais
+                    de golpes em mensagens recebidas.
+                </p>
+
+                <p>
+                    O sistema compara a mensagem recebida com uma lista
+                    de palavras e expressões consideradas suspeitas.
+                    Cada termo possui um peso diferente de acordo com
+                    seu nível de risco.
+                </p>
+
+                <p>
+                    Ao final, os pesos encontrados são somados e o sistema
+                    apresenta uma classificação baseada na pontuação total.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info">
+                    <span>LINGUAGEM</span>
+                    <strong>Java</strong>
+                </div>
+
+                <div class="info">
+                    <span>TIPO</span>
+                    <strong>Análise de mensagens</strong>
+                </div>
+
+                <div class="info">
+                    <span>MÉTODO</span>
+                    <strong>Sistema de pontuação</strong>
+                </div>
+
+                <div class="info">
+                    <span>STATUS</span>
+                    <strong>Concluído</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMO FUNCIONA -->
+
+    <section class="funcionamento">
+
+        <div class="titulo">
+
+            <p>02</p>
+
+            <h2>
+                Como <span>Funciona</span>
+            </h2>
+
+        </div>
+
+
+        <div class="fluxo">
+
+            <div class="etapa">
+
+                <span>01</span>
+
+                <i class="fas fa-comment-alt"></i>
+
+                <h3>
+                    Mensagem
+                </h3>
+
+                <p>
+                    O usuário fornece uma mensagem
+                    para o sistema.
+                </p>
+
+            </div>
+
+
+            <div class="seta">
+                →
+            </div>
+
+
+            <div class="etapa">
+
+                <span>02</span>
+
+                <i class="fas fa-search"></i>
+
+                <h3>
+                    Comparação
+                </h3>
+
+                <p>
+                    O sistema procura palavras
+                    suspeitas dentro da mensagem.
+                </p>
+
+            </div>
+
+
+            <div class="seta">
+                →
+            </div>
+
+
+            <div class="etapa">
+
+                <span>03</span>
+
+                <i class="fas fa-calculator"></i>
+
+                <h3>
+                    Pontuação
+                </h3>
+
+                <p>
+                    Cada termo encontrado adiciona
+                    seu peso à pontuação.
+                </p>
+
+            </div>
+
+
+            <div class="seta">
+                →
+            </div>
+
+
+            <div class="etapa">
+
+                <span>04</span>
+
+                <i class="fas fa-shield-alt"></i>
+
+                <h3>
+                    Resultado
+                </h3>
+
+                <p>
+                    A pontuação define o nível
+                    de suspeita da mensagem.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ANALISADOR -->
+
+    <section class="analisador" id="analisador">
+
+        <div class="titulo">
+
+            <p>03</p>
+
+            <h2>
+                Teste o <span>Sistema</span>
+            </h2>
+
+        </div>
+
+
+        <div class="analisador-box">
+
+            <label for="mensagem">
+                COLE UMA MENSAGEM PARA ANALISAR
+            </label>
+
+            <textarea
+                id="mensagem"
+                placeholder="Exemplo: URGENTE! Você ganhou um prêmio. Clique aqui para confirmar seus dados..."
+            ></textarea>
+
+
+            <button id="analisar">
+                ANALISAR MENSAGEM
+                <i class="fas fa-arrow-right"></i>
+            </button>
+
+
+            <div id="resultado" class="resultado">
+
+                <div class="resultado-topo">
+
+                    <span id="status">
+                        AGUARDANDO ANÁLISE
+                    </span>
+
+                    <strong id="pontuacao">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <p id="descricao">
+                    Digite uma mensagem acima para iniciar a análise.
+                </p>
+
+
+                <div id="termos" class="termos"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TECNOLOGIAS -->
+
+    <section class="tecnologias-section" id="tecnologias">
+
+        <div class="titulo">
+
+            <p>04</p>
+
+            <h2>
+                Tecnologias <span>Utilizadas</span>
+            </h2>
+
+        </div>
+
+
+        <div class="tecnologias-container">
+
+            <div class="tecnologia">
+
+                <i class="fab fa-java"></i>
+
+                <h3>
+                    Java
+                </h3>
+
+                <p>
+                    Linguagem utilizada para desenvolver
+                    a versão original do sistema.
+                </p>
+
+            </div>
+
+
+            <div class="tecnologia">
+
+                <i class="fas fa-code"></i>
+
+                <h3>
+                    Lógica de programação
+                </h3>
+
+                <p>
+                    Utilização de estruturas de repetição,
+                    condicionais, arrays e objetos.
+                </p>
+
+            </div>
+
+
+            <div class="tecnologia">
+
+                <i class="fas fa-calculator"></i>
+
+                <h3>
+                    Sistema de pesos
+                </h3>
+
+                <p>
+                    Cada palavra suspeita possui um peso
+                    utilizado para calcular o risco.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ESTRUTURA -->
+
+    <section class="codigo">
+
+        <div class="titulo">
+
+            <p>05</p>
+
+            <h2>
+                Lógica do <span>Sistema</span>
+            </h2>
+
+        </div>
+
+
+        <div class="codigo-box">
+
+<pre><code>Mensagem recebida
+        ↓
+Converter para letras minúsculas
+        ↓
+Percorrer palavras suspeitas
+        ↓
+Verificar se a mensagem contém o termo
+        ↓
+Adicionar o peso
+        ↓
+Somar a pontuação
+        ↓
+Classificar o resultado</code></pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            Wesley Garcia Macedo
+        </p>
+
+        <a href="../../index.html#projetos">
+            ← VOLTAR AOS PROJETOS
+        </a>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
