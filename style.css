@@ -141,7 +141,7 @@ body {
 
 .persona {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1000px;
 
     margin: 100px auto;
     padding: 100px 0;
@@ -150,13 +150,14 @@ body {
     border-bottom: 1px solid #7d3cff;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
 
     animation: aparecer 1s ease;
 }
-
 .persona-title {
-    width: 40%;
+    width: 30%;
 }
 
 .persona-title p {
@@ -182,6 +183,7 @@ body {
 
     font-size: 19px;
     line-height: 1.7;
+     transform: translateY(40px);
 
     margin-bottom: 25px;
 }
@@ -689,7 +691,16 @@ footer ul li:nth-child(4) a::before {
         width: 100%;
     }
 }
-
+.imagem{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            border: 3px solid var(--secondary-color);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+            zoom: 1.4;
+        }
 
 /* celular mais pequeno */
 
@@ -718,4 +729,6 @@ footer ul li:nth-child(4) a::before {
     .tecnologias {
         left: 30px;
     }
+
+    
 }
