@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
 <title>Controle de Gastos | Wesley Garcia</title>
 
 <link
@@ -15,13 +14,12 @@
 >
 
 <link rel="stylesheet" href="style.css">
-```
+
 
 </head>
 
 <body>
 
-```
 <!-- menu do projeto -->
 <nav class="menu">
 
@@ -315,7 +313,7 @@
                 <span>01</span>
                 <h3>Visualizar gastos</h3>
             </div>
-```
+
 
 <pre><code>SELECT
     usuarios.nome,
@@ -324,7 +322,6 @@ FROM gastos
 JOIN usuarios
 ON gastos.usuario_id = usuarios.id;</code></pre>
 
-```
         </div>
 
 
@@ -335,13 +332,11 @@ ON gastos.usuario_id = usuarios.id;</code></pre>
                 <span>02</span>
                 <h3>Total de gastos</h3>
             </div>
-```
 
 <pre><code>SELECT
     SUM(g.valor) AS total_gasto
 FROM gastos g;</code></pre>
 
-```
         </div>
 
 
@@ -352,7 +347,6 @@ FROM gastos g;</code></pre>
                 <span>03</span>
                 <h3>Gastos por categoria</h3>
             </div>
-```
 
 <pre><code>SELECT
     g.categoria,
@@ -360,7 +354,6 @@ FROM gastos g;</code></pre>
 FROM gastos g
 GROUP BY g.categoria;</code></pre>
 
-```
         </div>
 
 
@@ -371,7 +364,6 @@ GROUP BY g.categoria;</code></pre>
                 <span>04</span>
                 <h3>Gastos por usuário</h3>
             </div>
-```
 
 <pre><code>SELECT
     u.nome,
@@ -381,7 +373,6 @@ JOIN usuarios u
 ON g.usuario_id = u.id
 GROUP BY u.nome;</code></pre>
 
-```
         </div>
 
 
@@ -392,7 +383,6 @@ GROUP BY u.nome;</code></pre>
                 <span>05</span>
                 <h3>Filtro por data</h3>
             </div>
-```
 
 <pre><code>SELECT
     u.nome,
@@ -405,7 +395,6 @@ JOIN usuarios u
 ON g.usuario_id = u.id
 WHERE g.data >= '2026-06-12';</code></pre>
 
-```
         </div>
 
 
@@ -416,7 +405,6 @@ WHERE g.data >= '2026-06-12';</code></pre>
                 <span>06</span>
                 <h3>Buscar usuário</h3>
             </div>
-```
 
 <pre><code>SELECT
     u.nome,
@@ -428,7 +416,6 @@ JOIN usuarios u
 ON g.usuario_id = u.id
 WHERE u.nome = 'Gabriel';</code></pre>
 
-```
         </div>
 
     </div>
@@ -513,7 +500,6 @@ WHERE u.nome = 'Gabriel';</code></pre>
 
 
     <div class="codigo-box">
-```
 
 <pre><code>Cadastrar usuário
         ↓
@@ -529,7 +515,6 @@ Consultar os dados
         ↓
 Filtrar e agrupar resultados</code></pre>
 
-```
     </div>
 
 </section>
@@ -547,7 +532,6 @@ Filtrar e agrupar resultados</code></pre>
     </a>
 
 </footer>
-```
 
 </body>
 
